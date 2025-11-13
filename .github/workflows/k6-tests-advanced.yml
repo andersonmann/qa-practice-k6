@@ -3,9 +3,10 @@ name: K6 Performance Tests (Advanced)
 on:
   push:
     branches: [ main ]
-  schedule:
-    # Executa diariamente às 2am UTC
-    - cron: '0 2 * * *'
+  # Schedule desabilitado - execução automática diária não é necessária
+  # schedule:
+  #   # Executa diariamente às 2am UTC
+  #   - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       test_file:
