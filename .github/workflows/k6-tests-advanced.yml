@@ -3,16 +3,14 @@ name: K6 Performance Tests (Advanced)
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'tests/**'
+      - '.github/workflows/k6-tests-advanced.yml'
   # Schedule desabilitado - execução automática diária não é necessária
   # schedule:
   #   # Executa diariamente às 2am UTC
   #   - cron: '0 2 * * *'
-  workflow_dispatch:
-    inputs:
-      test_file:
-        description: 'Test file to run (e.g., tests/example-test.js)'
-        required: false
-        default: 'tests/example-test.js'
+  # workflow_dispatch desabilitado - repositório público, evita abuso de recursos
 
 jobs:
   smoke-test:
